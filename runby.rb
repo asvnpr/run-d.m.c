@@ -8,9 +8,7 @@ require 'yaml'
 require 'mkmf'
 require_relative 'options.rb'
 require 'trollop' #maybe unnecessary. idk if ruby is like C++ and it's inherited
-require 'net/http'
 require 'json'
-require 'uri'
 
 contacts = YAML.load_file('contacts.yaml') #load yaml file. should use absolute path to place file in different directory maybe?
 
@@ -64,7 +62,7 @@ sec_check = `echo $USER`.split() #get name of current user
 if (sec_check == 'root' and p[:force_root] == false)
 	puts "It is extremely dangerous to run this program as root!!"
 	puts "If you know what you're doing you can force the program to run. See the help section."
-
+	exit 
 else
 	puts text_when_done(p[:number], p[:command], contacts) unless does_not_validate(p[:number], p[:command]) #not super sure if this is correct
 end
