@@ -40,20 +40,20 @@ def text_when_done(num, cmd, cntcs) #third argument may be unecessary. not famil
 end
 
 def does_not_validate(num, cmd)
-	validates = false
+	invalid = false
 	test = find_executable cmd
 	test2 = `find . -maxdepth 1 -perm -111 -type f | grep #{cmd}`
 
 	#test if phone number is correct format, present in yaml, etc
 	if (num.to_s.length != 10 || contacts['phone_numbers'].values.include?(num)) 
-		validates = true
+		invalid = true
 		puts "You entered an invalid phone number: ", num
 	elsif (test.nil? || test.empty?) #test if program name is valid
 		if (test2.nil? || test2.empty?)
-			validates = true
+			invalid = true
 			puts "You entered an invalid command: ", cmd
 		end
-	validates
+	invalid
 	end
 end
 
