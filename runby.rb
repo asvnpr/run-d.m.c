@@ -48,9 +48,11 @@ def does_not_validate(num, cmd)
 	if (num.to_s.length != 10 || contacts['phone_numbers'].values.include?(num)) 
 		validates = true
 		puts "You entered an invalid phone number: ", num
-	elsif (test.nil? || test.empty? || test2.nil? || test2.empty?) #test if program name is valid
-		validates = true
-		puts "You entered an invalid command: ", cmd
+	elsif (test.nil? || test.empty?) #test if program name is valid
+		if (test2.nil? || test2.empty?)
+			validates = true
+			puts "You entered an invalid command: ", cmd
+		end
 	validates
 	end
 end
