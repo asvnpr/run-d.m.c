@@ -5,11 +5,13 @@
 - [trollop](https://github.com/ManageIQ/trollop)
 
 ### Usage:
-  - **OSX and Linux:**
-  ```bash
-  runby.rb -n <phone number in yaml file> -c <your_command>
-  runby.rb -n <phone number in yaml file> -c <your_command> -f #to run a command as root. Careful!
-  ```
+  - **OSX and Linux:**<br>
+    ```shell
+    
+    runby.rb -n <phone number in yaml file> -c <your_command>
+    runby.rb -n <phone number in yaml file> -c <your_command> -f #run a command as root. Careful!
+    
+    ```
   - **Windows:**
     - run a VM?
     - use a live USB?
