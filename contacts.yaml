@@ -1,0 +1,10 @@
+---
+
+#edit this file to set up a contact list
+#begin hash
+phone_numbers: 
+    #following are hash key-value pairs
+    person_1: '0000000000' 
+    person_2: '1111111111'
+    person_3: '2222222222'
+#end hash
