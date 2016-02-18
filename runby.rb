@@ -29,31 +29,31 @@ def text_when_done(num, cmd, cntcs) #third argument may be unecessary. not famil
 			date = `date +"%d-%m-%Y %H:%M %Z"`.strip()
 			user = `echo $USER`.strip()
 			phone_index = contacts['phone_numbers'].values.index(num)
-			phone = contacts['phone_numbers'].values[contacts[phone_index]
+			phone = contacts['phone_numbers'].values[contacts[phone_index]]
 			receiver = contacts['phone_numbers'].key(phone) 
 			message = "Hey #{receiver}, the process #{cmd} has finished running on #{host} at #{date}.\nThis process was run by #{user} from IP address #{ip}."
 
 			#commence sending message
 			send_req = `curl -X POST http://textbelt.com/text -d number=#{num} -d "message=#{message}`
-    	body = JSON.parse(send_req.body)
-    	body['success'.freeze]
+    		body = JSON.parse(send_req.body)
+    		body['success'.freeze]
 		end
 	end
 end
 
 def does_not_validate(num, cmd)
-	invalid = false
+	validates = false
 	test = find_executable cmd
 	test2 = `find . -maxdepth 1 -perm -111 -type f | grep #{cmd}`
 
 	#test if phone number is correct format, present in yaml, etc
-	if (num.to_s.length != 10 || contacts['phone_numbers'].values.include? num) 
-		invalid = true
+	if (num.to_s.length != 10 || contacts['phone_numbers'].values.include?(num)) 
+		validates = true
 		puts "You entered an invalid phone number: ", num
 	elsif (test.nil? || test.empty? || test2.nil? || test2.empty?) #test if program name is valid
-		invalid = true
+		validates = true
 		puts "You entered an invalid command: ", cmd
-	invalid
+	validates
 	end
 end
 
