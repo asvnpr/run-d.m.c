@@ -15,6 +15,7 @@
   - **Windows:**
     - run a VM?
     - use a live USB?
+    - install cygwin or similar?
     - install an OS that's useful?
 
 ####TODO:
