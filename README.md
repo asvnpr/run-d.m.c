@@ -8,8 +8,8 @@
   - **OSX and Linux:**<br>
     ```shell
     
-    runby.rb -n <phone number in yaml file> -c <your_command>
-    runby.rb -n <phone number in yaml file> -c <your_command> -f #run a command as root. Careful!
+    runby.rb -n <phone_number_in_yaml_file> -c <your_command>
+    runby.rb -n <phone_number_in yaml_file> -c <your_command> -f #run a command as root. Careful!
     
     ```
   - **Windows:**
