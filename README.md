@@ -16,7 +16,6 @@
     - run a VM?
     - use a live USB?
     - install cygwin or similar?
-    - install an OS that's useful?
 
 ####TODO:
   - check that code actually works
@@ -25,6 +24,8 @@
   - eliminate security concerns
   - would like to implement a mail option
   - pushbullet option could be worth looking into
+  - look into Windows compatibility
+  - see if I can find ways to run programs without shelling them out
 
 
 
